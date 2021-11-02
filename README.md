@@ -6,6 +6,10 @@ Flask Python Restful API - MySQL Boilerplate
 pip install -r requirements.txt 
 ```
 
+## Setup Environment Variables
+- Create .env file at root
+- Refer the .env.sample and setup environment variables in that file.
+
 ## API Endpoints
 - Write your APIs inside the routes directory
 - Import the endpoints in app.py
