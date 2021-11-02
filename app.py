@@ -2,13 +2,17 @@ from flask import Flask
 from flask.helpers import send_from_directory
 import os
 
+from dotenv import load_dotenv
+
 app = Flask(__name__, static_url_path='', static_folder='.')
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-# CORS section
+# Load environment variables
+load_dotenv()
 
 
 @app.after_request
+# CORS section
 def after_request_func(response):
     response.headers.add("Access-Control-Allow-Origin", "*")
     response.headers.add('Access-Control-Allow-Headers', "*")
