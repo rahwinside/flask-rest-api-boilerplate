@@ -1,11 +1,13 @@
 import pymysql
-from app import app, forbidden
+from app import app
+from error_handles import forbidden
 from config import mysql
 from flask import jsonify, request
 
 
 @app.route('/users', methods=['POST', 'GET'])
 def insert_cars():
+    # Sample route with a method handlers and a view function
     try:
         _form = request.form
         _name = _form['name']

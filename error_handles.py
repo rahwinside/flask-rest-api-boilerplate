@@ -1,5 +1,6 @@
 from app import app
 from flask import jsonify, request
+import traceback
 
 
 # 404 handler
@@ -12,7 +13,6 @@ def not_found(error=None):
     res = jsonify(message)
     res.status_code = 404
     return res
-# end 404 handler
 
 
 # 403 handler
@@ -25,11 +25,9 @@ def forbidden(error=None):
     res = jsonify(message)
     res.status_code = 403
     return res
-# end 403 handler
+
 
 # 500 handler
-
-
 @app.errorhandler(500)
 def internal_server_error(error=None):
     message = {
@@ -40,4 +38,3 @@ def internal_server_error(error=None):
     res.status_code = 500
     traceback.print_exc()
     return res
-# end 500 handler
